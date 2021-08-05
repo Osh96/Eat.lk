@@ -33,6 +33,8 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        //$user->attachRole('admin'); 
         $user->attachRole($input['role_id']);
         return $user;
     }

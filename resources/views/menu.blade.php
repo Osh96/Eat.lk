@@ -114,95 +114,20 @@
 
       <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
-        <div class="col-lg-6 menu-item filter-mains">
-          <img src="images/1.jpg" class="menu-img" alt="">
+        @foreach ($data as $data)
+            
+        
+        <div class="col-lg-6 menu-item filter-{{$data->type}}">
+          <img src="/foodimage/{{$data->image}}" class="menu-img" alt="">
           <div class="menu-content">
-            <a>BBQ Chicken Pizza</a><span>Rs 1800.00</span>
+            <a>{{$data->title}}</a><span>{{$data->price}}</span>
           </div>
           <div class="menu-ingredients">
-            BBQ chicken accompanied by spicy jalapenos and a double layer of mozzarella cheese
+            {{$data->description}}
           </div>
         </div>
 
-        <div class="col-lg-6 menu-item filter-mains">
-          <img src="images/2.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Pasta</a><span>Rs 850.00</span>
-          </div>
-          <div class="menu-ingredients">
-            The famed Italian spaghetti with minced chicken complemented by delicious mozzarella cheese.
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-mains">
-          <img src="images/3.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Chicken Noodles</a><span>Rs 800.00</span>
-          </div>
-          <div class="menu-ingredients">
-            A sumptuous dish, this chicken recipe is prepared by stir-frying chicken breast and then sautéing in soya sauce and red chilli sauce.
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <img src="images/caesar.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Caesar Selections</a><span>Rs 950.00</span>
-          </div>
-          <div class="menu-ingredients">
-            green salad of romaine lettuce and croutons dressed with lemon juice, olive oil, egg and black pepper.
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <img src="images/tuscan-grilled.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Tuscan Grilled</a><span>Rs 1000.00</span>
-          </div>
-          <div class="menu-ingredients">
-            Grilled chicken with provolone and roasted red pesto
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="images/mozzarella.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Mozzarella Stick</a><span>Rs 800.00</span>
-          </div>
-          <div class="menu-ingredients">
-            Mozzarella sticks are elongated pieces of battered or breaded mozzarella.
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <img src="images/greek-salad.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Greek Salad</a><span>Rs 750.00</span>
-          </div>
-          <div class="menu-ingredients">
-            Fresh spinach, crisp romaine, tomatoes, and Greek olives
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <img src="images/spinach-salad.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Spinach Salad</a><span>Rs 600.00</span>
-          </div>
-          <div class="menu-ingredients">
-            Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <img src="images/lobster-roll.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a>Lobster Roll</a><span>Rs 2400.00</span>
-          </div>
-          <div class="menu-ingredients">
-            Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-          </div>
-        </div>
+        @endforeach
 
       </div>
 

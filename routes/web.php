@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\AdminController;
+
+use App\Http\Controllers\RestaurantController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +36,11 @@ Route::get('restaurant-view', 'App\Http\Controllers\HomeController@restaurantvie
 Route::get('menu-view', 'App\Http\Controllers\HomeController@menuview');
 
 Route::get('contactus-view', 'App\Http\Controllers\HomeController@contactusview');
+
+Route::get("/userView",[AdminController::class,"userView"]);
+
+Route::get("/menuView",[RestaurantController::class,"menuView"]);
+
+Route::POST("/uploadfood",[RestaurantController::class,"upload"]);
+
+Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
