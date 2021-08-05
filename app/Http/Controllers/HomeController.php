@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
+use App\Models\Food;
+
 class HomeController extends Controller
 {
     public function index()
@@ -17,7 +20,8 @@ class HomeController extends Controller
     }
     public function menuview()
     {
-            return view ('menu');
+            $data = food::all();
+            return view ('menu',compact("data"));
     }
     public function contactusview()
     {
