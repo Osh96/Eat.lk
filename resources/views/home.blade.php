@@ -9,9 +9,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap"
             rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
     
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=WindSong:wght@500&display=swap" rel="stylesheet">
 
     
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -59,7 +62,7 @@
                             <a class="navbar-brand" style="color: #F0A500;">Eat.lk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: #F0A500;" href="/cart-view">Cart</a>
+                            <a class="nav-link" style="color: #F0A500;" @auth  href="{{url('/showcart',Auth::user()->id)}}">Cart</a>@endauth @guest <a class="nav-link" style="color: #F0A500;">Cart</a> @endguest
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: #F0A500;" href="/contactus-view">Contact Us</a>
@@ -146,7 +149,17 @@
     <section id="forYouRecom">
 
         <div class="row">
-            <h1>For You</h1>
+            {{-- <h1> For You </h1> --}}
+            <div class="hrtext">
+                <div class="hrbefore">
+                  <hr>
+                </div>
+                <div class="hrcontent">
+                  <h2 style="font-family: 'WindSong', cursive; Font-size: 90px">For You</h2>
+                </div>
+                <div class="hrafter"><hr>
+                </div>
+              </div>
             <div class="col-sm-3">
                 <div class="forYouRecom-card" style="width: 18rem;">
                     <img src="images/1.jpg" class="card-img-top" alt="...">
@@ -195,7 +208,8 @@
     <!-- Categories -->
     <section id="categories">
         
-        <h1>Categories</h1>
+              <h2 style="font-family: 'Dancing Script', cursive;; Font-size: 90px">Categories</h2>
+            
         <div class="category_img">
         <img height="auto" width="20%" src="images/1.jpg" class="img-thumbnail" alt="...">
         <img height="20%" width="20%" src="images/2.jpg" class="img-thumbnail" alt="...">

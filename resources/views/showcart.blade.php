@@ -34,7 +34,6 @@
     <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 </head>
 
-
 <body>
 
     <section id="nav">
@@ -92,56 +91,42 @@
             </nav>
         </div>
     </section>
-    </head>
 
-    <body>
+    <!-- Cart View -->
+    <section id="displaycart">
 
-        <!--Contact Us form -->
-        <section id="contactUs-form">
-            <div class="text-format">
-                <h1>Send us a Message</h1>
-            </div>
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="inputName" class="form-label">Name</label>
-                    <input type="name" class="form-control" id="inputNameContact">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmailContact">
-                </div>
-                <div class="col-12">
-                    <label for="inputSubject" class="form-label">Subject</label>
-                    <input type="text" class="form-control" id="inputSubjectContact">
-                </div>
-                <div class="mb-3">
-                    <label for="textArea" class="form-label">Your Message</label>
-                    <textarea class="form-control" id="textareaContact" rows="3"></textarea>
-                </div>
-            </form>
-            <button type="button" class="btn btn-primary">Send Message</button>
-        </section>
+    <table class="table">
+        <tr align="center" style= "color: black">
+            <th style="padding: 50px; padding-left: 5%; margin-top: 5%">Item</th>
+            <th style="padding: 50px; padding-left: 5%; margin-top: 5%">Quantity</th>
+            <th style="padding: 50px; padding-left: 5%; margin-top: 5%">Price</th>
+            <th style="padding: 50px; padding-left: 5%; margin-top: 5%">Action</th>
+        </tr>
 
-        <section id="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.761503165684!2d79.85980196208999!3d6.919090552851194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596d3cb8fe07%3A0x2b0ae2edd563a661!2sAsia%20Pacific%20Institute%20of%20Information%20Technology%20(APIIT)!5e0!3m2!1sen!2slk!4v1626210826896!5m2!1sen!2slk"
-                width="1024" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </section>
+        @foreach($data as $data)
+        <tr align="center">
+            <td style="padding: 15px">{{$data->title}}</td>
+            <td style="padding: 15px">{{$data->quantity}}</td>
+            <td style="padding: 15px">{{$data->price}}</td>
+            
+        @endforeach
 
-      
- <!-- Footer -->
- <footer id="footer">
+        @foreach ($datas as $datas)
+        <tr style="position: relative; top: -200px; right: -1320px">
+                <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/removecart',$datas->id)}}">Delete</a></button></td>
+        </tr>
+        @endforeach
 
-    <p class="footer-name fab" style="color: #F0A500;">Hirushi Athukorala</p>
-    <i class="footer-icons fab fa-linkedin"></i>
-    <p class="footer-name fab" style="color: #F0A500;">Oshada Wanigasekara</p>
-    <i class="footer-icons fab fa-linkedin"></i>
-    <p class="footer-name fab" style="color: #F0A500;">Umar Ahamed</p>
-    <i class="footer-icons fab fa-linkedin"></i>
-    <p class="float-right"><a href="#" style="color: #F0A500;">Back to top</a></p>
+    </section>
+    
+    <!-- Footer -->
 
-
-</footer>
+   
+    
 
 </body>
+
 </html>
+
+
+
