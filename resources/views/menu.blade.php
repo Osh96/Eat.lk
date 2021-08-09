@@ -95,9 +95,13 @@
 <section id="menu" class="menu section-bg">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title">
-        <h2>Pizza Hut</h2>
-        <p>Check Out our Tasty Menu</p>
+      <div class="menusection-title">
+        <div class="row" >
+            <img class="menuBackgroundImage">
+            <h2 class="bottem-left-h2">Pizza Hut</h2>
+        <p class="bottem-left-p">Check Out our Tasty Menu</p>
+        </div>
+            
       </div>
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -124,6 +128,10 @@
           </div>
           <div class="menu-ingredients">
             {{$data->description}}
+            
+          </div>
+          <div class="menu-content">
+              <span><button type="button" class="btn btn-success btn-sm">Add to Cart</button></span>
           </div>
         </div>
 
@@ -137,7 +145,19 @@
 
 
 <!-- Footer -->
+<!-- Footer -->
+<footer id="footer">
 
+    <p class="footer-name fab" style="color: #F0A500;">Hirushi Athukorala</p>
+    <i class="footer-icons fab fa-linkedin"></i>
+    <p class="footer-name fab" style="color: #F0A500;">Oshada Wanigasekara</p>
+    <i class="footer-icons fab fa-linkedin"></i>
+    <p class="footer-name fab" style="color: #F0A500;">Umar Ahamed</p>
+    <i class="footer-icons fab fa-linkedin"></i>
+    <p class="float-right"><a href="#" style="color: #F0A500;">Back to top</a></p>
+
+
+</footer>
 <!-- Vendor JS Files -->
 <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 

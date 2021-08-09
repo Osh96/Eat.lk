@@ -174,7 +174,34 @@ p{
 
 /*Menu page*/
 #menu{
-    padding: 5%;
+    padding: 4%;
+}
+.menusection-title{
+    position: relative;
+}
+.menuBackgroundImage{
+    background-image: url('../images/carousal1.jpg'); 
+    height: 400px; 
+    background-size: cover; 
+    
+    opacity: 94%;
+    background-repeat: no-repeat;
+}
+.bottem-left-h2{
+    color: white;
+    font-family: sans-serif;
+    position: absolute;
+    font-size: 55px;
+    bottom: 40px;
+    left: 16px;
+}
+.bottem-left-p{
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 }
 .menu #menu-flters{
     padding: 0;
@@ -206,13 +233,12 @@ p{
     margin-top: 50px;
 }
 .menu .menu-img{
-    width: 70px;
-    border-radius: 50%;
+    width: 100px;
     float: left;
     border: 5px solid rgba(0, 0, 0, 0.2);
 }
 .menu .menu-content{
-    margin-left: 85px;
+    margin-left: 110px;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
@@ -246,7 +272,7 @@ p{
     color: #e49713;
 }
 .menu .menu-ingredients {
-    margin-left: 85px;
+    margin-left: 110px;
     font-style: italic;
     font-size: 14px;
     color: black;

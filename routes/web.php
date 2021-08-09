@@ -41,6 +41,14 @@ Route::get("/userView",[AdminController::class,"userView"]);
 
 Route::get("/menuView",[RestaurantController::class,"menuView"]);
 
+Route::get("/mainMenuView",[RestaurantController::class,"mainMenuView"]);
+
+Route::get("/restaurantEditView",[RestaurantController::class,"restaurantEditView"]);
+
+Route::POST("/uploadEditRestaurant",[HomeController::class,"uploadEditRestaurant"]);
+
 Route::POST("/uploadfood",[RestaurantController::class,"upload"]);
+
+Route::get("/deletefooditem/{id}",[RestaurantController::class,"deletefooditem"]);
 
 Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
