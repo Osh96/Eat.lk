@@ -16,39 +16,30 @@
 
         <div style="position: relative; top: 100px; right: -160px">
 
-            <table bgcolor="grey" border="3px">
-                <tr>
-                    <th style="padding: 30px" bgcolor="green">Name</th>
-                    <th style="padding: 30px" bgcolor="green">Email</th>
-                    <th style="padding: 30px" bgcolor="green">Action</th>
-                </tr>
+
+                <table class="table" >
+                  <tr style= "color: gold" >
+                      <th style="padding: 30px" bgcolor="green">Name</th>
+                      <th style="padding: 30px"bgcolor="green">Email</th>
+                      <th style="padding: 30px"bgcolor="green">Action</th>
+                  </tr>
 
                 @foreach($data as $data)
                     
-                     <tr>
-                        <th style="padding: 30px">{{$data->name}}</th>
-                     <th style="padding: 30px">{{$data->email}}</th>
+                  <tr style="align: center; color:white">
+                      <th style="padding: 30px">{{$data->name}}</th>
+                      <th style="padding: 30px">{{$data->email}}</th>
 
-                        <th style="padding: 30px"><a href="{{url('/deleteuser',$data->id)}}">Delete</a></th>
-      
-                     </tr>
+                      <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/deleteuser',$data->id)}}">Delete</a></button>
+                  </tr>
 
                      @endforeach
-
 
             </table>
         </div>
 
-        
-           
-            
-
-
-
-
         </div>
             
-        
         @include("admin.admincss")
       </body>
     </html>

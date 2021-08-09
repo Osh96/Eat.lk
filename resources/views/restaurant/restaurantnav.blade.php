@@ -7,20 +7,38 @@
         <span class="nav-link">Navigation</span>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="{{url('/menuView')}}">
+        <a class="nav-link" href="{{url('/')}}">
           <span class="menu-icon">
-            <i class="mdi mdi-speedometer"></i>
+            <i class="mdi mdi-playlist-play"></i>
+          </span>
+          <span class="menu-title">Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('/mainMenuView')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-playlist-play"></i>
           </span>
           <span class="menu-title">Menu</span>
         </a>
       </li>
+
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('/menuView')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-speedometer"></i>
+          </span>
+          <span class="menu-title">Add Food Items</span>
+        </a>
+      </li>
       
       <li class="nav-item menu-items">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" href="{{url('/restaurantEditView')}}">
           <span class="menu-icon">
             <i class="mdi mdi-playlist-play"></i>
           </span>
-          <span class="menu-title">Requests</span>
+          <span class="menu-title">Edit Restaurant View</span>
         </a>
       </li>
       

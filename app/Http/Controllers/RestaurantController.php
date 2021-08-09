@@ -7,12 +7,25 @@ use App\Models\Food;
 use App\Models\User;
 
 
+
 class RestaurantController extends Controller
 {
     public function menuView()
     {
         
         return view("restaurant.menuView");
+    }
+
+    public function mainMenuView()
+    {
+        $data = food::all();
+        return view("restaurant.mainMenuView", compact("data"));
+    }
+
+    public function restaurantEditView()
+    {
+        
+        return view("restaurant.restaurantEditView");
     }
 
     public function upload(Request $request)
@@ -36,7 +49,18 @@ class RestaurantController extends Controller
 
                 $data->save();
 
+                
+
                 return redirect()->back();
         
+    }
+
+   
+
+    public function deletefooditem($id)
+    {
+        $data=food::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }

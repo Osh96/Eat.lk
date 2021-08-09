@@ -41,7 +41,7 @@
                     <input type="file" name="image"  required>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary" value="save" >Submit</button>
+                    <button  type="submit" class="btn btn-primary" value="save" style="margin-top: 7%" >Submit</button>
                 </div>
             </form>
         </div>
