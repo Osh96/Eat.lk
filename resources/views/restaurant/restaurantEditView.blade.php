@@ -16,12 +16,15 @@
 
         <div style="position: relative; top: 100px; right: -250px">
 
-          <form action="{{url('/uploadEditRestaurant')}}" method="post" enctype="multipart/form-data" style="margin: 20%">
+          
+          <form action="{{url('/uploadEditRestaurant')}}" method="post" enctype="multipart/form-data" style="margin: 20%;">
 
             @csrf
             <div>
-              <label>Title</label>
-              <input style="color: black" type="text" name="title" placeholder="Enter a title" required>
+              {{-- <label style="font-family: sans-serif; font-size: 25px">{{ Auth::user()->name }}</label> --}}
+              <label>Name</label>
+              <input style="color: black" type="text" name="title" placeholder="Enter the name" required>
+              
           </div>
             <div>
                 <label>Description</label>
@@ -35,6 +38,7 @@
                 <button  type="submit" class="btn btn-primary" value="save" style="margin-top: 7%" >Submit</button>
             </div>
         </form>
+        
             
             
         </div>

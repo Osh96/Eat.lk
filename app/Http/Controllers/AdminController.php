@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use App\Models\Menu;
+use App\Models\Restaurant;
 
 class AdminController extends Controller
 {
@@ -17,7 +18,7 @@ class AdminController extends Controller
 
     public function deleteuser($id)
     {
-        $data=user::find($id);
+        $data=user::find($id);   
         $data->delete();
         return redirect()->back();
     }

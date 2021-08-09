@@ -24,8 +24,8 @@ class RestaurantController extends Controller
 
     public function restaurantEditView()
     {
-        
-        return view("restaurant.restaurantEditView");
+        $data = User::all();
+        return view("restaurant.restaurantEditView",compact("data"));
     }
 
     public function upload(Request $request)

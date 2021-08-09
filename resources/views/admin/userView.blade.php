@@ -30,7 +30,9 @@
                       <th style="padding: 30px">{{$data->name}}</th>
                       <th style="padding: 30px">{{$data->email}}</th>
 
+                    @if($data->usertype=='0')
                       <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/deleteuser',$data->id)}}">Delete</a></button>
+                    @endif
                   </tr>
 
                      @endforeach

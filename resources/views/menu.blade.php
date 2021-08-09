@@ -57,7 +57,7 @@
                     <a class="navbar-brand" style="color: #F0A500;">Eat.lk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #F0A500;" href="/cart-view">Cart</a>
+                    <a class="nav-link" style="color: #F0A500;" @auth  href="{{url('/showcart',Auth::user()->id)}}">Cart</a>@endauth @guest <a class="nav-link" style="color: #F0A500;">Cart</a> @endguest
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: #F0A500;" href="/contactus-view">Contact Us</a>
@@ -119,6 +119,9 @@
       <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
         @foreach ($data as $data)
+
+        <form action="{{url('/addcart',$data->id)}}" method="post">
+            @csrf
             
         
         <div class="col-lg-6 menu-item filter-{{$data->type}}">
@@ -131,10 +134,11 @@
             
           </div>
           <div class="menu-content">
-              <span><button type="button" class="btn btn-success btn-sm">Add to Cart</button></span>
+              <input type="number" name="quantity" min="1" value="1" style="width: 50px">
+              <span><button type="submit" class="btn btn-success btn-sm">Add to Cart</button></span>
           </div>
         </div>
-
+    </form>
         @endforeach
 
       </div>

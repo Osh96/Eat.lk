@@ -57,7 +57,7 @@
                 <a class="navbar-brand" style="color: #F0A500;">Eat.lk</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color: #F0A500;" href="/cart-view">Cart</a>
+              <a class="nav-link" style="color: #F0A500;" @auth  href="{{url('/showcart',Auth::user()->id)}}">Cart</a>@endauth @guest <a class="nav-link" style="color: #F0A500;">Cart</a> @endguest
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="color: #F0A500;" href="/contactus-view">Contact Us</a>

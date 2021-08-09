@@ -49,6 +49,12 @@ Route::POST("/uploadEditRestaurant",[HomeController::class,"uploadEditRestaurant
 
 Route::POST("/uploadfood",[RestaurantController::class,"upload"]);
 
+Route::POST("/addcart/{id}",[HomeController::class,"addcart"]);
+
+Route::get("/showcart/{id}",[HomeController::class,"showcart"]);
+
+Route::get("/removecart/{id}",[HomeController::class,"removecart"]);
+
 Route::get("/deletefooditem/{id}",[RestaurantController::class,"deletefooditem"]);
 
 Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
