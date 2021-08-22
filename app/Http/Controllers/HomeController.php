@@ -27,6 +27,10 @@ class HomeController extends Controller
     {
             $data = food::all();
             return view ('menu',compact("data"));
+
+        // $data=food::select('*')->where('user_id','=',$id)->get();
+        // return view('menu',compact("data"));
+
     }
     public function contactusview()
     {
@@ -34,7 +38,11 @@ class HomeController extends Controller
     }
     public function uploadEditRestaurant(Request $request)
     {
+        $user_id=Auth::id();
+
         $datas = new Restaurant;
+
+        $datas->user_id=$user_id;
 
         $image = $request->image;
 

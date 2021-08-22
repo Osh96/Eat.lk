@@ -105,7 +105,6 @@
         {{Auth::user()->name}}<br>
         <label for="email">Email:</label><br>
         {{Auth::user()->email}}<br>
-        <label for="mobile">Mobile No:</label><br>
         
       </form>
     </div>

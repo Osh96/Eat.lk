@@ -3,23 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Food;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\User;
+use App\Models\Food;
+use App\Models\Cart;
+use App\Models\Restaurant;
 
 
 
 class RestaurantController extends Controller
 {
-    public function menuView()
+    public function menuView(Request $request,$id)
     {
         
         return view("restaurant.menuView");
+        // $data=food::select('*')->where('user_id','=',$id)->get();
+        // return view('menu',compact("data"));
+        // $datas=food::select('*')->where('user_id','=',$id)->get();
+        // $data=cart::where('user_id',$id)->join('food','carts.food_id','=','food.id')->get();
+        // return view('showcart',compact("data","datas"));
     }
 
     public function mainMenuView()
     {
         $data = food::all();
         return view("restaurant.mainMenuView", compact("data"));
+
     }
 
     public function restaurantEditView()
@@ -30,7 +40,11 @@ class RestaurantController extends Controller
 
     public function upload(Request $request)
     {
+        $user_id = Auth::id();
+
         $data = new food;
+
+        $data->user_id=$user_id;
 
         $image = $request->image;
 
