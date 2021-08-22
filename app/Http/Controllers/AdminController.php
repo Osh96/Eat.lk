@@ -18,8 +18,10 @@ class AdminController extends Controller
 
     public function deleteuser($id)
     {
-        $data=user::find($id);   
+        $data=user::find($id);
+        //$data2=Restaurant::select('*')->where('user_id','=',$id)->get(); 
         $data->delete();
+        //$data2->delete();
         return redirect()->back();
     }
 }

@@ -155,7 +155,7 @@
             <div class="card-body">
               <h5 class="card-title">{{$datas->title}}</h5>
               <p class="card-text">{{$datas->description}}</p>
-              <a href="/menu-view" class="btn btn-primary">Visit Restaurant</a>
+              <a href="{{url('/menu-view')}}" class="btn btn-primary">Visit Restaurant</a>
             </div>
           </div>
           

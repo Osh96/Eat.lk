@@ -98,7 +98,7 @@
       <div class="menusection-title">
         <div class="row" >
             <img class="menuBackgroundImage">
-            <h2 class="bottem-left-h2">Pizza Hut</h2>
+            <h2 class="bottem-left-h2">Pizza hut</h2>
         <p class="bottem-left-p">Check Out our Tasty Menu</p>
         </div>
             

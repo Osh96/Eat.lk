@@ -14,7 +14,8 @@
             @include("restaurant.restaurantnav")
 
             <div style="position: relative; top: 100px; ">
-
+                <div class="scroll-menu" style="overflow: scroll; height:600px;
+                width:100%">  
             <table class="table" >
                 <tr style= "color: gold" >
                     <th style="padding: 30px">Image</th>
@@ -25,7 +26,7 @@
                     <th style="padding: 30px">Action</th>
                 </tr>
 
-
+                
                 @foreach ($data as $data)
                     
                 
@@ -37,7 +38,7 @@
                     <td >{{$data->description}}</td>
                     <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/deletefooditem',$data->id)}}">Delete</a></button></td>
                 </tr>
-
+            </div>
                 @endforeach
 
                
