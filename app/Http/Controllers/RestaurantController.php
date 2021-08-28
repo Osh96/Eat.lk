@@ -11,10 +11,9 @@ use App\Models\Cart;
 use App\Models\Restaurant;
 
 
-
 class RestaurantController extends Controller
 {
-    public function menuView(Request $request,$id)
+    public function menuView()
     {
         
         return view("restaurant.menuView");
@@ -64,7 +63,6 @@ class RestaurantController extends Controller
                 $data->save();
 
                 
-
                 return redirect()->back();
         
     }

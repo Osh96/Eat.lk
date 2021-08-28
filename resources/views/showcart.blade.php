@@ -58,7 +58,7 @@
                             <a class="navbar-brand" style="color: #F0A500;">Eat.lk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color: #F0A500;" @auth  href="{{url('/showcart',Auth::user()->id)}}">Cart</a>@endauth @guest <a class="nav-link" style="color: #F0A500;">Cart</a> @endguest
+                            <a class="nav-link" style="color: #F0A500;" @auth  href="{{url('/showcart',Auth::user()->id)}}">Cart</a> @endauth @guest <a class="nav-link" style="color: #F0A500;">Cart</a> @endguest
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="color: #F0A500;" href="/contactus-view">Contact Us</a>
@@ -108,14 +108,15 @@
             <td style="padding: 15px">{{$data->title}}</td>
             <td style="padding: 15px">{{$data->quantity}}</td>
             <td style="padding: 15px">{{$data->price}}</td>
-            
+
         @endforeach
 
         @foreach ($datas as $datas)
-        <tr style="position: relative; top: -165px; right: -1320px">
-                <td> <button class="btn btn-danger" value="save" ><a style="text-decoration: none; color: white;" href="{{url('/removecart',$datas->id)}}">Delete</a></button></td>
+        <tr style="position: relative; top: -200px; right: -1320px">
+                <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/removecart',$datas->id)}}">Delete</a></button></td>
         </tr>
         @endforeach
+
 
     </section>
     
