@@ -15,10 +15,10 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->nullable;
-            $table->string("title")->nullable;
-            $table->string("description")->nullable;
-            $table->string("image")->nullable;
+            $table->string('user_id')->nullable();
+            $table->string("title")->nullable();
+            $table->string("description")->nullable();
+            $table->string("image")->nullable();
             // $table->integer('user_id');
             // $table->foreign('user_id')->unsigned()->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

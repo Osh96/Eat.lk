@@ -74,7 +74,7 @@ class HomeController extends Controller
 
             $cart=new Cart;
 
-            $cart->user_id=$user_id;
+            $cart->userid=$user_id;
             $cart->food_id=$foodid;
             $cart->quantity=$quantity;
 
@@ -91,10 +91,13 @@ class HomeController extends Controller
 
     public function showcart(Request $request,$id)
     {
-        $datas=cart::select('*')->where('user_id','=',$id)->get();
-        $data=cart::where('user_id',$id)->join('food','carts.food_id','=','food.id')->get();
-        return view('showcart',compact("data","datas"));
 
+        $datas=cart::select('*')->where('userid','=',$id)->get();
+        // // $data=cart::where('user_id',$id)->join('food', 'carts.food_id','=','food.id')->get();
+        // return view('showcart',compact("datas"));
+
+        $data=cart::where('userid',$id)->join('food','carts.food_id','=', 'food.id')->get();   
+        return view('showcart',compact('data','datas'));
 
     }
 
