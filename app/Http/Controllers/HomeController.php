@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\memberContact;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 use App\Models\User;
 use App\Models\Food;
@@ -23,26 +26,53 @@ class HomeController extends Controller
         $datas = Restaurant::all();
         return view('restaurantView',compact("datas"));
     }
-    public function menuview()
+    public function menuview(Request $request)
     {
             $data = food::all();
-            return view ('menu',compact("data"));
+            
+            //return view ('menu',compact("data"));
 
-        // $data=food::select('*')->where('user_id','=',$id)->get();
-        // return view('menu',compact("data"));
+        //$data=food::select('*')->where('userid','=',$id)->get();
+        //$data=food::select('*')->where('user_id','=',$id)->get();
+
+        // $data=food::where('userid')
+        // ->join('restaurants','restaurants.id','food.id')
+        // ->select('food.*')->where('restaurants.userid','=','food.user_id')
+        // ->get();
+        
+
+       // return view('menu',compact('data'));
+
+       //$data=restaurants::all();
+       return view('menu',compact('data'));
 
     }
     public function contactusview()
     {
         return view('contactUs');
     }
+
+    public function submitContact(Request $request)
+    {
+        $data=[
+            'name'=> $request ->name,
+            'email'=>$request->email,
+            'subject'=>$request->subject,
+            'message'=>$request->message,
+        ];
+        Mail::to('lkeat418@gmail.com')->send(new memberContact($data));
+
+        Session::flash('message', 'Thank you for your email. We will get back to you soon!');
+        return redirect()->route('contact.show');
+    }
+
     public function uploadEditRestaurant(Request $request)
     {
         $user_id=Auth::id();
 
         $datas = new Restaurant;
 
-        $datas->user_id=$user_id;
+        $datas->userid=$user_id;
 
         $image = $request->image;
 
@@ -108,5 +138,14 @@ class HomeController extends Controller
         $data->delete();
         return redirect()->back();
     }
+
+    // public function search(Request $request)
+    // {
+    //     $search=$search->search;//coming from the type in search form
+
+    //     $data=food::where('title','Like','%'.$search.'%')->get();
+
+    //     return view('restaurantView',compact('data'));
+    // }
 
 }

@@ -104,11 +104,11 @@
                     <button type="button" class="btn btn-outline-light btn-lg download-button"><i
                             class="fab fa-google-play"></i>
                         Download</button>
-                    <form class="d-flex">
+                    {{-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Enter your craving"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> --}}
                 </div>
 
             </div>

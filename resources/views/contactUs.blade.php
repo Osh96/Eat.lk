@@ -97,36 +97,49 @@
     <body>
 
         <!--Contact Us form -->
+        {!! Form::open(['route'=>'contact.submit'])!!}
         <section id="contactUs-form">
             <div class="text-format">
                 <h1>Send us a Message</h1>
+               
             </div>
-            <form class="row g-3">
+
+            @if(Session::has('message'))
+            <div class="alert alert-success">
+                {{Session('message')}}
+            </div>
+            @endif
+
+            
+                
                 <div class="col-md-6">
                     <label for="inputName" class="form-label">Name</label>
-                    <input type="name" class="form-control" id="inputNameContact">
+                    <input type="name" class="form-control" name="name"  id="inputNameContact">
                 </div>
                 <div class="col-md-6">
                     <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmailContact">
+                    <input type="email" class="form-control" name="email"  id="inputEmailContact">
                 </div>
                 <div class="col-12">
                     <label for="inputSubject" class="form-label">Subject</label>
-                    <input type="text" class="form-control" id="inputSubjectContact">
+                    <input type="text" class="form-control" name="subject"  id="inputSubjectContact">
                 </div>
                 <div class="mb-3">
                     <label for="textArea" class="form-label">Your Message</label>
-                    <textarea class="form-control" id="textareaContact" rows="3"></textarea>
+                    <textarea class="form-control"  id="textareaContact" name="message" rows="3"></textarea>
                 </div>
-            </form>
-            <button type="button" class="btn btn-primary">Send Message</button>
+            
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
         </section>
-
+        {!! Form::close()!!}
         <section id="map">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.761503165684!2d79.85980196208999!3d6.919090552851194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596d3cb8fe07%3A0x2b0ae2edd563a661!2sAsia%20Pacific%20Institute%20of%20Information%20Technology%20(APIIT)!5e0!3m2!1sen!2slk!4v1626210826896!5m2!1sen!2slk"
                 width="1024" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
+
+        
 
       
  <!-- Footer -->

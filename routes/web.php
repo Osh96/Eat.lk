@@ -33,9 +33,15 @@ Route::group(['middleware' => ['auth', 'role:user']], function() {
 
 Route::get('restaurant-view', 'App\Http\Controllers\HomeController@restaurantview');
 
-Route::get('menu-view', 'App\Http\Controllers\HomeController@menuview');
+Route::get('/menu-view', [HomeController::class,"menuview"]);
 
-Route::get('contactus-view', 'App\Http\Controllers\HomeController@contactusview');
+//Route::get('/contactUs', 'HomeController@contactusview')->name('contact.show');
+
+Route::get('/contactus-view', [HomeController::class,"contactusview"])->name('contact.show');;
+
+//Route::post('/contactUs', 'HomeController@submitContact')->name('contact.submit');
+
+Route::post('/contactus-view', [HomeController::class,"submitContact"])->name('contact.submit');;
 
 Route::get("/userView",[AdminController::class,"userView"]);
 
@@ -52,6 +58,8 @@ Route::POST("/uploadfood",[RestaurantController::class,"upload"]);
 Route::POST("/addcart/{id}",[HomeController::class,"addcart"]);
 
 Route::get("/showcart/{id}",[HomeController::class,"showcart"]);
+
+// Route::get("/search",[HomeController::class,"search"]);
 
 Route::get("/removecart/{id}",[HomeController::class,"removecart"]);
 
