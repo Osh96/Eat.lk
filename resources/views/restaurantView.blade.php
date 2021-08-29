@@ -93,7 +93,7 @@
     </section>
 
     <!-- Sort section -->
-    <section id="sort">
+    {{-- <section id="sort">
         
 
         <div class="restaurant-list-dropdowns">
@@ -140,9 +140,15 @@
         
     </section>
 
-    <div class="sortSearchButton">
+    {{-- <div class="sortSearchButton">
         <button type="button" class="btn btn-success btn-lg">Search</button>
-      </div>
+      </div> --}} 
+
+{{-- <form action="{{url('search')}}" method="" class="form-inline" style="position: absolute; padding: 50px; ">
+    @csrf
+    <input class="form-control" type="search" name="search" placeholder="search">
+    <input type="submit" value="Search" class="btn btn-success" style="margin-top: 1%">
+</form> --}}
 
     <section id="restaurant-list">
         
@@ -150,7 +156,7 @@
     
         @foreach ($datas as $datas)
 
-          <div class="restaurant-list-card" style="width: 20rem;">
+          <div class="restaurant-list-card" style="width: 20rem; padding-top: 10%">
             <img src="/restaurantimage/{{$datas->image}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{$datas->title}}</h5>
