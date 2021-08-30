@@ -94,7 +94,7 @@
 
     <!-- Cart View -->
     <section id="displaycart">
-
+<div  id="top" style="overflow-x: hidden;">
     <table class="table">
         <tr align="center" style= "color: black">
             <th style="padding: 50px; padding-left: 5%; margin-top: 5%">Item</th>
@@ -103,31 +103,82 @@
             <th style="padding: 50px; padding-left: 5%; margin-top: 5%">Action</th>
         </tr>
 
-        @foreach($data as $data)
-        <tr align="center">
-            <td style="padding: 15px">{{$data->title}}</td>
-            <td style="padding: 15px">{{$data->quantity}}</td>
-            <td style="padding: 15px">{{$data->price}}</td>
+<form action="{{url('orderconfirm')}}" method="POST"> 
+            @csrf
 
+        @foreach($data as $data)
+
+        <tr align="center">
+            <td style="padding: 15px">
+                <input type="text" name="foodname[]" value="{{$data->title}}" hidden="">
+                {{$data->title}}
+            </td>
+            <td style="padding: 15px">
+                <input type="text" name="quantity[]" value="{{$data->quantity}}" hidden="">
+                {{$data->quantity}}
+            </td>
+            <td style="padding: 15px">
+                <input type="text" name="price[]" value="{{$data->price}}" hidden="">
+                {{$data->price}}
+            </td>
+        </tr>
         @endforeach
+    
 
         @foreach ($datas as $datas)
         <tr style="position: relative; top: -200px; right: -1320px">
                 <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/removecart',$datas->id)}}">Delete</a></button></td>
         </tr>
         @endforeach
+    </table>
+    {{-- <div align="center" style="padding: 10px;">
+    <button class="btn btn-primary" type="button" id="order">Order Now</button>
+    </div> --}}
 
+    <div id="appear" align="center" style="padding: 10px; ">
+    
+    <div style="padding: 10px;">
+        <label>Receiver Name</label>
+        <input type="text" name="name" placeholder="Name">
+    </div>
 
+    <div style="padding: 10px;">
+        <label>Address</label>
+        <input type="text" name="address" placeholder="Address">
+    </div>
+
+    <div style="padding: 10px;">
+        <input class="btn btn-success" type="submit" value="Confirm Order">
+        {{-- <button id="close" type="button" class="btn btn-success" >Close</button> --}}
+        </div>
+    
+    </div>
+    </form>
+
+</div>
+    
     </section>
     
     <!-- Footer -->
 
-   
+    <footer id="footer">
+
+        <p class="footer-name fab" style="color: #F0A500;">Hirushi Athukorala</p>
+        <i class="footer-icons fab fa-linkedin"></i>
+        <p class="footer-name fab" style="color: #F0A500;">Oshada Wanigasekara</p>
+        <i class="footer-icons fab fa-linkedin"></i>
+        <p class="footer-name fab" style="color: #F0A500;">Umar Ahamed</p>
+        <i class="footer-icons fab fa-linkedin"></i>
+        <p class="float-right"><a href="#" style="color: #F0A500;">Back to top</a></p>
+
+
+    </footer>
     
 
 </body>
 
 </html>
+
 
 
 

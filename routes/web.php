@@ -59,9 +59,13 @@ Route::POST("/addcart/{id}",[HomeController::class,"addcart"]);
 
 Route::get("/showcart/{id}",[HomeController::class,"showcart"]);
 
-// Route::get("/search",[HomeController::class,"search"]);
+Route::post("/orderconfirm",[HomeController::class,"orderconfirm"]);
+
+Route::get("/search",[RestaurantController::class,"search"]);
 
 Route::get("/removecart/{id}",[HomeController::class,"removecart"]);
+
+Route::get("/orders",[RestaurantController::class,"orders"]);
 
 Route::get("/deletefooditem/{id}",[RestaurantController::class,"deletefooditem"]);
 
