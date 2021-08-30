@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Food;
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Restaurant;
 
 
@@ -74,5 +75,21 @@ class RestaurantController extends Controller
         $data=food::find($id);
         $data->delete();
         return redirect()->back();
+    }
+
+    public function orders()
+    {
+        $data=order::all();
+
+        return view ('restaurant.orders',compact('data'));
+    }
+
+    public function search(Request $request)
+    {
+        $search=$request->search;
+
+        $data=food::where('title','like','%'.$search.'%')->get();
+
+        return view ('restaurant.mainMenuView',compact('data'));
     }
 }

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\Food;
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Restaurant;
 
 class HomeController extends Controller
@@ -129,6 +130,31 @@ class HomeController extends Controller
         $data=cart::where('userid',$id)->join('food','carts.food_id','=', 'food.id')->get();   
         return view('showcart',compact('data','datas'));
 
+    }
+
+    public function orderconfirm(Request $request)
+    {
+
+        foreach($request->foodname as $key =>$foodname)
+        {
+            $data=new order;
+
+            $data->foodname=$foodname;
+
+            $data->price=$request->price[$key];
+
+            $data->quantity=$request->quantity[$key];
+
+            $data->name=$request->name;
+
+            $data->address=$request->address;
+
+            $data->save();
+
+        }
+
+        
+        return redirect()->back();
     }
 
     public function removecart($id)
