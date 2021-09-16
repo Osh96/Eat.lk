@@ -14,7 +14,7 @@
 
         @include("restaurant.restaurantnav")
           
-          <div style="position: relative; top: 100px; ">
+          {{-- <div style="position: relative; top: 100px; ">
             <div class="scroll-menu" style="overflow: scroll; height:600px;
                 width:250%">  
           <table style="margin-left: 10%">
@@ -38,12 +38,41 @@
                 <td>Rs.{{$data->price*$data->quantity}}.00</td>
             </tr>
             @endforeach
-          </div>
+            </div>
 
           </table>
-          </div>
+          </div> --}}
         
+          <div class="card-body" style="color:rgb(255, 255, 255)">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Food Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total Price</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data as $data)
+                        <tr>
+                            <td>{{ $data->name }}</td>
+                            <td>{{ $data->address }}</td>
+                            <td>{{ $data->foodname }}</td>
+                            <td>Rs.{{ $data->price }}</td>
+                            <td>{{ $data->quantity}}</td>
+                            <td>Rs.{{$data->price*$data->quantity}}.00</td>
+                            <td>
+                            </td>
+                        </tr>
+                     @endforeach
+                </tbody>
+            </table>
             
+        </div>
             
      
   
