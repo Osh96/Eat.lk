@@ -20,7 +20,7 @@ class CreateRestaurantsTable extends Migration
             $table->string("description")->nullable();
             $table->string("image")->nullable();
             // $table->integer('user_id');
-            // $table->foreign('user_id')->unsigned()->references('id')->on('users')->onDelete('cascade');
+            //$table->foreignId('userid')->constrained()->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -27,7 +27,7 @@ class HomeController extends Controller
         $datas = Restaurant::all();
         return view('restaurantView',compact("datas"));
     }
-    public function menuview(Request $request)
+    public function menuview(Request $request, food $id)
     {
             $data = food::all();
             
@@ -36,7 +36,7 @@ class HomeController extends Controller
         //$data=food::select('*')->where('userid','=',$id)->get();
         //$data=food::select('*')->where('user_id','=',$id)->get();
 
-        // $data=food::where('userid')
+        // $data=food::where('user_id', $id)
         // ->join('restaurants','restaurants.id','food.id')
         // ->select('food.*')->where('restaurants.userid','=','food.user_id')
         // ->get();
@@ -154,7 +154,8 @@ class HomeController extends Controller
         }
 
         
-        return redirect()->back();
+        //return redirect()->back();
+        return redirect()->away('https://www.paypal.com/lk/signin?country.x=LK&locale.x=en_LK');
     }
 
     public function removecart($id)
@@ -165,13 +166,22 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    // public function search(Request $request)
-    // {
-    //     $search=$search->search;//coming from the type in search form
+    public function searchMenu(Request $request)
+    {
+        $search=$request->search;
 
-    //     $data=food::where('title','Like','%'.$search.'%')->get();
+        $data=food::where('title','like','%'.$search.'%')->get();
 
-    //     return view('restaurantView',compact('data'));
-    // }
+        return view ('menu',compact('data'));
+    }
+
+    public function searchRestaurant(Request $request)
+    {
+        $search=$request->search;
+
+        $datas=restaurant::where('title','like','%'.$search.'%')->get();
+
+        return view ('restaurantView',compact('datas'));
+    }
 
 }

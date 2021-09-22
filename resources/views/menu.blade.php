@@ -116,6 +116,15 @@
         </div>
       </div>
 
+      <div class="container">
+        <form class="d-flex" action="{{url('/searchMenu')}}" method="get" role="search"> 
+            @csrf
+            <input  class="form-control me-2" type="search" name="search"  placeholder="Search by food name" aria-label="Search" style="margin-left: 9%; ">
+            <button class="btn btn-primary" type="submit">Search</button>
+
+            </form>
+        </div>
+
       <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
         @foreach ($data as $data)
