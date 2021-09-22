@@ -98,12 +98,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h1 class="big-heading">Why starve when you have us.</h1>
-                    <button type="button" class="btn btn-success btn-lg download-button"><i class="fab fa-apple"></i>
+                    <button type="button" class="btn btn-success btn-lg download-button"><i class="fab fa-apple"><a style="text-decoration: none; color: white;" href="https://www.apple.com/app-store/"></i>
                         Download
-                    </button>
-                    <button type="button" class="btn btn-outline-light btn-lg download-button"><i
+                    </button></a>
+                    <button type="button" class="btn btn-outline-light btn-lg download-button"><a style="text-decoration: none; color: white;" href="https://play.google.com/store"><i
                             class="fab fa-google-play"></i>
-                        Download</button>
+                        Download</button></a>
                     {{-- <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Enter your craving"
                             aria-label="Search">
@@ -208,14 +208,39 @@
     <!-- Categories -->
     <section id="categories">
         
-              <h2 style="font-family: 'Dancing Script', cursive;; Font-size: 90px">Categories</h2>
-            
-        <div class="category_img">
+              {{-- <h2 style="font-family: 'Dancing Script', cursive;; Font-size: 90px">Categories</h2> --}}
+             <!-- Features -->
+  <section id="features">
+
+    
+
+    <div class="row">
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-check-circle fa-4x"></i>
+        <h3>Easy to use.</h3>
+        <p style="color: white">So easy to use, Find what your heart desire.</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-dot-circle fa-4x"></i>
+        <h3>Elite Clientele</h3>
+        <p style="color: white">We have all the food from the greatest restaurant</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-heart fa-4x"></i>
+        <h3>Guaranteed to work.</h3>
+        <p style="color: white">Delivered with care or your money back.</p>
+      </div>
+    </div>
+
+  </section>
+        {{-- <div class="category_img">
         <img height="auto" width="20%" src="images/1.jpg" class="img-thumbnail" alt="...">
         <img height="20%" width="20%" src="images/2.jpg" class="img-thumbnail" alt="...">
         <img height="20%" width="20%" src="images/3.jpg" class="img-thumbnail" alt="...">
         <img height="20%" width="20%" src="images/4.jpg" class="img-thumbnail" alt="...">
-    </div>
+    </div> --}}
     </section>
 
     <!-- Reviews section -->

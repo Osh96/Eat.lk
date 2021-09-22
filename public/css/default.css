@@ -130,7 +130,7 @@ p{
     color: white;
     background-image: url("../images/categorybackground.jpg");
     background-color: #cccccc; /* Used if the image is unavailable */
-    height: 950px; /* You must set a specified height */
+    height: 650px; /* You must set a specified height */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
@@ -141,6 +141,24 @@ p{
 .category_img{
     padding-top: 10%;
     border-radius: 50%;
+}
+
+/*Features Section*/
+#features{
+    padding: 7% 15%;
+    position: relative;  
+    
+}
+.feature-box{
+    text-align: center;
+    padding: 5%;
+}
+.icon{
+    color: #ef8172;
+    margin-bottom: 1rem;
+}
+.icon:hover{
+    color: #ff4c68;
 }
 
 /*Testimonial section*/

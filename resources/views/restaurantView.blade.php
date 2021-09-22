@@ -144,11 +144,14 @@
         <button type="button" class="btn btn-success btn-lg">Search</button>
       </div> --}} 
 
-{{-- <form action="{{url('search')}}" method="" class="form-inline" style="position: absolute; padding: 50px; ">
-    @csrf
-    <input class="form-control" type="search" name="search" placeholder="search">
-    <input type="submit" value="Search" class="btn btn-success" style="margin-top: 1%">
-</form> --}}
+      <div class="container">
+        <form style="padding-top: 5%" class="d-flex" action="{{url('/searchRestaurant')}}" method="get" role="search"> 
+            @csrf
+            <input  class="form-control me-2" type="search" name="search"  placeholder="Search by Restaurant" aria-label="Search" style="margin-left: 9%; ">
+            <button class="btn btn-success" type="submit">Search</button>
+
+            </form>
+        </div>
 
     <section id="restaurant-list">
         

@@ -68,8 +68,6 @@ class RestaurantController extends Controller
         
     }
 
-   
-
     public function deletefooditem($id)
     {
         $data=food::find($id);

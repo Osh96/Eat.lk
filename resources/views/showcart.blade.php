@@ -121,15 +121,20 @@
                 <input type="text" name="price[]" value="{{$data->price}}" hidden="">
                 {{$data->price}}
             </td>
+            @endforeach
+            <td>
+                @foreach ($datas as $datas)
+                <tr style="position: relative; top: -165px; right: -1320px">
+                        <td> <button class="btn btn-danger" value="save"><a style="text-decoration: none; color: white;" href="{{url('/removecart',$datas->id)}}">Delete</a></button></td>
+                </tr>
+                @endforeach</td>
         </tr>
-        @endforeach
-    
 
-        @foreach ($datas as $datas)
+        {{-- @foreach ($datas as $datas)
         <tr style="position: relative; top: -200px; right: -1320px">
                 <td> <button class="btn btn-danger" value="save" style="margin-top: 7%"><a style="text-decoration: none; color: white;" href="{{url('/removecart',$datas->id)}}">Delete</a></button></td>
         </tr>
-        @endforeach
+        @endforeach --}}
     </table>
     {{-- <div align="center" style="padding: 10px;">
     <button class="btn btn-primary" type="button" id="order">Order Now</button>

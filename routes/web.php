@@ -63,6 +63,10 @@ Route::post("/orderconfirm",[HomeController::class,"orderconfirm"]);
 
 Route::get("/search",[RestaurantController::class,"search"]);
 
+Route::get("/searchMenu",[HomeController::class,"searchMenu"]);
+
+Route::get("/searchRestaurant",[HomeController::class,"searchRestaurant"]);
+
 Route::get("/removecart/{id}",[HomeController::class,"removecart"]);
 
 Route::get("/orders",[RestaurantController::class,"orders"]);
